@@ -8,7 +8,7 @@ namespace Full_GRASP_And_SOLID.Library
 {
     public class Step // Coordinator
     {
-        public Step(Product input, double quantity, Equipment equipment, int time)
+        public Step(Product input, double quantity, Equipment equipment, int time) //Constructor Method
         {
             this.Quantity = quantity;
             this.Input = input;

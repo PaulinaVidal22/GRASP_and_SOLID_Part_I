@@ -8,7 +8,7 @@ namespace Full_GRASP_And_SOLID.Library // Information Holder
 {
     public class Product
     {
-        public Product(string description, double unitCost)
+        public Product(string description, double unitCost) //Constructor Method
         {
             this.Description = description;
             this.UnitCost = unitCost;
