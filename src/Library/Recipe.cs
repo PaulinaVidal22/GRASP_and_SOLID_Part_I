@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace Full_GRASP_And_SOLID.Library
 {
-    public class Recipe
+    public class Recipe // Service Provider
     {
         private ArrayList steps = new ArrayList();
 

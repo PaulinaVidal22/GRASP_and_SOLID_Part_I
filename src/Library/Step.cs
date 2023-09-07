@@ -6,7 +6,7 @@
 
 namespace Full_GRASP_And_SOLID.Library
 {
-    public class Step
+    public class Step // Coordinator
     {
         public Step(Product input, double quantity, Equipment equipment, int time)
         {

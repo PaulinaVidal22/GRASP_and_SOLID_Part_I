@@ -6,7 +6,7 @@
 
 namespace Full_GRASP_And_SOLID.Library
 {
-    public class Equipment
+    public class Equipment //Information Holder
     {
         public Equipment(string description, double hourlyCost)
         {
