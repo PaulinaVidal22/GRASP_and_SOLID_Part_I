@@ -35,7 +35,7 @@ namespace Full_GRASP_And_SOLID.Library
             }
         }
 
-        public IList GetSteps()
+        public ArrayList GetSteps() 
         {
             /* Returns a copy of the list of steps
             this is how the encapsulation is maintained */

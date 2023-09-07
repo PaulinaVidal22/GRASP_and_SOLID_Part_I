@@ -4,26 +4,24 @@ namespace Full_GRASP_And_SOLID.Library
 {
     public class ProductionCost //Service provider
     {
-        public static double GetProductionCost(Recipe recipe, Product product, Equipment equipment)
+        public static double GetSuppliesCost(ArrayList suppliesList)
         {
             double suppliesCost = 0;
-            IList suppliesList = recipe.GetSteps();
 
             foreach (Step step in suppliesList)
             {
-                suppliesCost =+ step.Quantity * product.UnitCost;
+                suppliesCost =+ step.Quantity * step.Input.UnitCost; //corregir, product.UnitCost colaborar con product
     
             } return suppliesCost;
         }
 
-        public static double GetEquipmentCost(Recipe recipe, Equipment equipment)
+        public static double GetEquipmentCost(ArrayList equipmentList)
         {
             double equipmentCost = 0;
-            IList equipmentList = recipe.GetSteps();
 
             foreach (Step step in equipmentList)
             {
-                equipmentCost =+ step.Time * equipment.HourlyCost;
+                equipmentCost =+ step.Time * step.Equipment.HourlyCost;
             }
             return equipmentCost;
         }
@@ -36,3 +34,7 @@ namespace Full_GRASP_And_SOLID.Library
 
     }
 }
+
+/* identificación de los esteoreotipos de las clases 
+de acuerdo al principio de la responsabilidad unica (S.R.P)
+, que es uno de los principios SOLID */
