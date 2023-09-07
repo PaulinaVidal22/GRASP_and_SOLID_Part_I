@@ -10,7 +10,7 @@ namespace Full_GRASP_And_SOLID.Library
 
             foreach (Step step in suppliesList)
             {
-                suppliesCost =+ step.Quantity * step.Input.UnitCost; //corregir, product.UnitCost colaborar con product
+                suppliesCost =+ step.Quantity * step.Input.UnitCost; //corregir, porque motivo no me permite acceder si Input es un atributo de tipo product
     
             } return suppliesCost;
         }
@@ -37,4 +37,4 @@ namespace Full_GRASP_And_SOLID.Library
 
 /* identificación de los esteoreotipos de las clases 
 de acuerdo al principio de la responsabilidad unica (S.R.P)
-, que es uno de los principios SOLID */
+, que es uno de los principios SOLID */ 
