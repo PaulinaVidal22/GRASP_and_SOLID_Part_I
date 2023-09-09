@@ -4,24 +4,29 @@ namespace Full_GRASP_And_SOLID.Library
 {
     public class ProductionCost //Service provider
     {
-        public static double GetSuppliesCost(ArrayList suppliesList)
+
+        public static double GetSuppliesCost( ArrayList recipeList, ArrayList productList)
         {
             double suppliesCost = 0;
 
-            foreach (Step step in suppliesList)
+            foreach (Step input in recipeList)
             {
-                suppliesCost =+ step.Quantity * step.Input.UnitCost; //corregir, porque motivo no me permite acceder si Input es un atributo de tipo product
-    
+                foreach (Product product in productList)
+                {
+                        suppliesCost =+ (input.Quantity/60) * product.UnitCost;
+                    
+                }
             } return suppliesCost;
         }
 
-        public static double GetEquipmentCost(ArrayList equipmentList)
+        public static double GetEquipmentCost(ArrayList recipeList, ArrayList equipmentList)
         {
             double equipmentCost = 0;
 
-            foreach (Step step in equipmentList)
+            foreach (Step instruments in recipeList)
             {
-                equipmentCost =+ step.Time * step.Equipment.HourlyCost;
+                foreach (Equipment equipment in equipmentList)
+                equipmentCost =+ (instruments.Time/3600) * equipment.HourlyCost;
             }
             return equipmentCost;
         }

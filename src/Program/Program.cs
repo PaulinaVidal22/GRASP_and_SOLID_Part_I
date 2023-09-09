@@ -26,8 +26,11 @@ namespace Full_GRASP_And_SOLID
             recipe.AddStep(new Step(GetProduct("Café"), 100, GetEquipment("Cafetera"), 120));
             recipe.AddStep(new Step(GetProduct("Leche"), 200, GetEquipment("Hervidor"), 60));
             recipe.PrintRecipe();
+            
+        ArrayList recipeIngredients = new ArrayList();
+        recipeIngredients = recipe.GetSteps();
 
-            double totalProductionCost = CalculateTotalProductionCost(productCatalog, equipmentCatalog);
+            double totalProductionCost = CalculateTotalProductionCost(recipeIngredients, productCatalog, equipmentCatalog);
 
             Console.WriteLine($"Costo Total de Producción: {totalProductionCost}");
         }
@@ -73,10 +76,10 @@ namespace Full_GRASP_And_SOLID
             var query = from Equipment equipment in equipmentCatalog where equipment.Description == description select equipment;
             return query.FirstOrDefault();
         }
-        private static double CalculateTotalProductionCost(ArrayList productList, ArrayList equipmentList )
+        private static double CalculateTotalProductionCost(ArrayList recipeIngredients, ArrayList productList, ArrayList equipmentList )
         {
-            double suppliesCost = ProductionCost.GetSuppliesCost(productList);
-            double equipmentCost = ProductionCost.GetEquipmentCost(equipmentList);
+            double suppliesCost = ProductionCost.GetSuppliesCost(recipeIngredients, productList);
+            double equipmentCost = ProductionCost.GetEquipmentCost(recipeIngredients, equipmentList);
             return ProductionCost.GetProductionCost(suppliesCost, equipmentCost);
         }
     }

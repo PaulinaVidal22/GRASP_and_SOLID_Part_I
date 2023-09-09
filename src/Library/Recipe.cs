@@ -38,8 +38,8 @@ namespace Full_GRASP_And_SOLID.Library
         public ArrayList GetSteps() 
         {
             /* Returns a copy of the list of steps
-            this is how the encapsulation is maintained */
+            this is how the encapsulation is maintained*/
             return new ArrayList(this.steps);
-        }
+        } 
     }
 }
